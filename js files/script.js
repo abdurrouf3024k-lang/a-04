@@ -44,5 +44,13 @@ function toogleStyle(id){
 mainContainer.addEventListener('click', function(event){
   const parentNode = event.target.parentNode.parentNode;
   const chakrirName = parentNode.querySelector('.ChakrirName').innerText;
-  console.log(chakrirName);
+  const developerType = parentNode.querySelector('.developerType').innerText;
+  const salaryDollar = parentNode.querySelector('.salaryDollar').innerText;
+  const applicableBtn = parentNode.querySelector('.applicableBtn').innerText;
+  const jobDescription = parentNode.querySelector('.jobDescription').innerText;
+  
+
+  const cardInfo = { chakrirName, developerType, salaryDollar, applicableBtn, jobDescription };
+  console.log(cardInfo);
+   
 })
