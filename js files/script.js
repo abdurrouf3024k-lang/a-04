@@ -40,6 +40,17 @@ function toogleStyle(id){
   const selectedBtn = document.getElementById(id);
   selectedBtn.classList.remove('bg-[#FFFFFF]', 'text-[#64748B]');
   selectedBtn.classList.add('bg-[#3B82F6]', 'text-[#FFFFFF]');
+
+
+  if(id == 'interview-filter-btn'){
+    allCardSection.classList.add('hidden');
+    filteredSection.classList.remove('hidden');
+}
+  else if(id == 'all-filter-btn'){
+    allCardSection.classList.remove('hidden');
+    filteredSection.classList.add('hidden');
+  }
+   
 }
 
 mainContainer.addEventListener('click', function(event){
@@ -55,7 +66,7 @@ mainContainer.addEventListener('click', function(event){
   const jobDescription = parentNode.querySelector('.jobDescription').innerText;
   
 
-  const cardInfo = { chakrirName, developerType, salaryDollar, applicableBtn, jobDescription };
+  const cardInfo = { chakrirName, developerType, salaryDollar, applicableBtn : 'Interview', jobDescription };
   const jobExist = interviewList.find(item => item.chakrirName == cardInfo.chakrirName);
 
   parentNode.querySelector('.applicableBtn').innerText = 'Interview';
@@ -84,11 +95,11 @@ for(let interview of interviewList){
   div.innerHTML = ` <!-- main part-1 -->
           <div>
             <div>
-              <h1 class="ChakrirName font-semibold text-[18px] text-[#002C5C]">Mobile First Corp</h1>
+              <h1 class="ChakrirName font-semibold text-[18px] text-[#002C5C]">${interview.chakrirName}</h1>
               <p class="developerType text-[#64748B]">React Native Developer</p>
               <p class="salaryDollar text-[#64748B] mt-[20px]">Remote • Full-time • $130,000 - $175,000</p>
             </div>
-            <p  class="applicableBtn text-[14px] font-medium p-[12px] bg-[#EEF4FF] w-[200px] rounded-xl text-center mt-[20px]">Not Applied</p>
+            <p  class="applicableBtn text-[14px] font-medium p-[12px] bg-[#EEF4FF] w-[200px] rounded-xl text-center mt-[20px]">${interview.applicableBtn}</p>
             <p class="jobDescription font-[14px] font-regular text-[#323B49] mt-[8px]">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
             <div class="mt-[20px]">
               <button class="font-[14px] font-semibold text-[#10B981] bg-[#FFFFFF] p-[12px] rounded-xl border border-[#10B981] mr-[8px]" id="interview-btn">INTERVIEW</button>
@@ -100,7 +111,7 @@ for(let interview of interviewList){
           <div>
             <button class="dlt-btn"><i class="fas fa-trash"></i></button>
           </div>`
-          
+
   filteredSection.appendChild(div);
 } 
 }
