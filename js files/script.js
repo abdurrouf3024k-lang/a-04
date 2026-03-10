@@ -74,7 +74,7 @@ mainContainer.addEventListener('click', function(event){
   if(!jobExist){
     interviewList.push(cardInfo);
   }
-
+   calculateCount();
   renderInterview()
   
  }
