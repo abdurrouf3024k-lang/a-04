@@ -58,6 +58,8 @@ mainContainer.addEventListener('click', function(event){
   const cardInfo = { chakrirName, developerType, salaryDollar, applicableBtn, jobDescription };
   const jobExist = interviewList.find(item => item.chakrirName == cardInfo.chakrirName);
 
+  parentNode.querySelector('.applicableBtn').innerText = 'Interview';
+
   if(!jobExist){
     interviewList.push(cardInfo);
   }
@@ -98,5 +100,7 @@ for(let interview of interviewList){
           <div>
             <button class="dlt-btn"><i class="fas fa-trash"></i></button>
           </div>`
+          
+  filteredSection.appendChild(div);
 } 
 }
