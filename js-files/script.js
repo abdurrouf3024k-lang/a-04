@@ -154,8 +154,8 @@ for(let interview of interviewList){
             <p  class="applicableBtn text-[14px] font-medium p-[12px] bg-[#EEF4FF] w-[200px] rounded-xl text-center mt-[20px]">${interview.applicableBtn}</p>
             <p class="jobDescription font-[14px] font-regular text-[#323B49] mt-[8px]">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
             <div class="mt-[20px]">
-              <button class="font-[14px] font-semibold text-[#10B981] bg-[#FFFFFF] p-[12px] rounded-xl border border-[#10B981] mr-[8px]" id="interview-btn">INTERVIEW</button>
-              <button class="font-[14px] font-semibold text-[#EF4444] bg-[#FFFFFF] p-[12px] rounded-xl border border-[#EF4444]" id="rejected-btn">REJECTED</button>
+              <button class="interview-btn font-[14px] font-semibold text-[#10B981] bg-[#FFFFFF] p-[12px] rounded-xl border border-[#10B981] mr-[8px]" >INTERVIEW</button>
+              <button class="rejected-btn font-[14px] font-semibold text-[#EF4444] bg-[#FFFFFF] p-[12px] rounded-xl border border-[#EF4444]" >REJECTED</button>
             </div>
           </div>
 
@@ -191,8 +191,8 @@ for(let rejected of rejectList){
             <p  class="applicableBtn text-[14px] font-medium p-[12px] bg-[#EEF4FF] w-[200px] rounded-xl text-center mt-[20px]">${rejected.applicableBtn}</p>
             <p class="jobDescription font-[14px] font-regular text-[#323B49] mt-[8px]">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
             <div class="mt-[20px]">
-              <button class="font-[14px] font-semibold text-[#10B981] bg-[#FFFFFF] p-[12px] rounded-xl border border-[#10B981] mr-[8px]" id="interview-btn">INTERVIEW</button>
-              <button class="font-[14px] font-semibold text-[#EF4444] bg-[#FFFFFF] p-[12px] rounded-xl border border-[#EF4444]" id="rejected-btn">REJECTED</button>
+              <button class="interview-btn font-[14px] font-semibold text-[#10B981] bg-[#FFFFFF] p-[12px] rounded-xl border border-[#10B981] mr-[8px]" >INTERVIEW</button>
+              <button class="rejected-btn font-[14px] font-semibold text-[#EF4444] bg-[#FFFFFF] p-[12px] rounded-xl border border-[#EF4444]" >REJECTED</button>
             </div>
           </div>
 
