@@ -1,5 +1,6 @@
 let interviewList = [];
 let rejectList = [];
+let currentStatus  = []
 
 
 let total = document.getElementById('total');
@@ -45,6 +46,7 @@ function toogleStyle(id){
   if(id == 'interview-filter-btn'){
     allCardSection.classList.add('hidden');
     filteredSection.classList.remove('hidden');
+    renderInterview();
 }
   else if(id == 'all-filter-btn'){
     allCardSection.classList.remove('hidden');
@@ -53,11 +55,27 @@ function toogleStyle(id){
   else if(id == 'rejected-filter-btn'){
     allCardSection.classList.add('hidden');
     filteredSection.classList.remove('hidden');
+    renderRejected();
   }
    
 }
 
 mainContainer.addEventListener('click', function(event){
+
+  if(event.target.closest('.dlt-btn')){ 
+    const parentCard = event.target.closest('.flex');
+    const chakrirName = parentCard.querySelector('.ChakrirName').innerText;
+
+    
+    interviewList = interviewList.filter(item => item.chakrirName !== chakrirName);
+    rejectList = rejectList.filter(item => item.chakrirName !== chakrirName);
+
+    
+    parentCard.remove();
+
+    
+    calculateCount();
+}
 
   
 
@@ -78,6 +96,8 @@ mainContainer.addEventListener('click', function(event){
   if(!jobExist){
     interviewList.push(cardInfo);
   }
+
+  rejectList = rejectList.filter(item => item.chakrirName !== cardInfo.chakrirName);
    calculateCount();
   renderInterview()
   
@@ -100,7 +120,14 @@ mainContainer.addEventListener('click', function(event){
   if(!jobExist){
     rejectList.push(cardInfo);
   }
+
+  interviewList = interviewList.filter(item => item.chakrirName !== cardInfo.chakrirName);
+
+
+  // if()
+
    calculateCount();
+
    renderRejected();
  }
 })
